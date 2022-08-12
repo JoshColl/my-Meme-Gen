@@ -10,18 +10,45 @@
 </head>
 
 <body onload="onInit()">
-    <section class="meme-editor">
-        <div class="canvas-container">
-            <canvas id="meme-canvas" width="400" height="400"></canvas>
-        </div>
-        <form class="meme-settings" oninput="onSetLineTxt(event,this)">
-            <input type="text">
-        </form>
-    </section>
-    <section>
-        <div class="gallery-img">
-        </div>
-    </section>
+
+    <header class="main-header">
+        <section class="flex align-center">
+            <div class="logo">Logo</div>
+            <nav class="main-nav">
+                <ul class="clean-list flex align-center">
+                    <li><a href="#" onclick="onOpenGallery()">Gallery</a></li>
+                    <li><a href="#">Memes</a></li>
+                    <li><a href="#">About</a></li>
+                </ul>
+            </nav>
+        </section>
+    </header>
+
+    <main>
+        <section class="gallery">
+            <div class="gallery-img images-container grid">
+            </div>
+        </section>
+
+        <section class="meme-editor" hidden>
+            <div class="canvas-container">
+                <canvas id="meme-canvas" width="400" height="400"></canvas>
+            </div>
+
+            <form class="meme-settings">
+                <button class="switch-line-btn" onclick="onSwitchLine()">← →</button>
+                <button class="small-font-btn" onclick="onDecreaseFontSize()">A-</button>
+                <button class="big-font-btn" onclick="onIncreaseFontSize()">A+</button>
+                <input class="txt-input" oninput="onSetLineTxt(this.value)" type="text" placeholder="Enter text">
+                <input class="clr-input" onchange="onSetTextColor(this.value)" type="color">
+                <button class="add-line" onclick="onAddLine()">Add</button>
+                <button class="save-btn" onclick="onSaveMeme()">Save</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>footer</footer>
+
     <script src="js/meme.service.js"></script>
     <script src="js/gallery.service.js"></script>
     <script src="js/meme.controller.js"></script>

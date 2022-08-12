@@ -5,46 +5,63 @@ let gCtx
 
 
 
-
 function onInit() {
-    gElCanvas = document.getElementById('meme-canvas')
-    console.log(gElCanvas);
-    gCtx = gElCanvas.getContext('2d')
-    renderMeme()
+	gElCanvas = document.getElementById('meme-canvas')
+	gCtx = gElCanvas.getContext('2d')
+	renderGallery()
 }
 
 function renderMeme() {
-    const meme = getMeme()
-    const memeTxt = meme.lines[0].txt
-    renderImg()
-
-    drawText(memeTxt, 60, 60)
+	const meme = getMeme()
+	const elImg = getElImg()
+	drawImg(elImg)
+	drawText(meme)
 }
 
-function drawText(txt, x, y) {
-    gCtx.beginPath()
-    gCtx.textBaseline = 'middle';
-    gCtx.textAlign = 'center';
-    gCtx.lineWidth = 1;
-    gCtx.font = '40px david';
-    gCtx.fillStyle = 'yellow';
-    gCtx.fillText(txt, x, y);
-    gCtx.strokeStyle = 'green';
-    gCtx.strokeText(txt, x, y);
-    gCtx.closePath()
+function drawText(meme) {
+	const txtLine = meme.lines[meme.selectedLineIdx]
+	gCtx.beginPath()
+	gCtx.textBaseline = 'center'
+	gCtx.textAlign = txtLine.align
+	gCtx.lineWidth = 0.5
+	gCtx.font = `${txtLine.size}px Impact`
+	gCtx.fillStyle = txtLine.color
+	gCtx.fillText(txtLine.txt, 0, 50 * (meme.selectedLineIdx + 1))
+	gCtx.strokeStyle = 'black'
+	gCtx.strokeText(txtLine.txt, 0, 50 * (meme.selectedLineIdx + 1))
+	gCtx.closePath()
 }
 
-function renderImg() {
-    const elImg = getImg()
-    elImg.onload = () =>
-        gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+function drawImg(elImg) {
+	elImg.onload = () =>
+		gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function onSetLineTxt(ev, elForm) {
-    // ev.preventDefault()
-    // ev.stopPropagation()
-    const memeLine = elForm.querySelector('input').value
-    console.log(memeLine)
-    setLineTxt(memeLine)
-    renderMeme()
+function onSetLineTxt(txt) {
+	setLineTxt(txt)
+	renderMeme()
+}
+
+function onSetTextColor(color) {
+	setTextColor(color)
+	renderMeme()
+}
+
+function onIncreaseFontSize() {
+	increaseFontSize()
+	renderMeme()
+}
+
+function onDecreaseFontSize() {
+	decreaseFontSize()
+	renderMeme()
+}
+
+function onSwitchLine() {
+	switchLines()
+	renderMeme()
+	const meme = getMeme()
+	const selectedLine = meme.lines[meme.selectedLineIdx]
+	const elTextInput = document.querySelector('input[class="txt-input"]')
+	elTextInput.value = selectedLine.text
 }
