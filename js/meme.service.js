@@ -1,19 +1,26 @@
 'use strict'
-var gElImg
-var gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
 
-// var gImgs = [{ id: 1, url: 'img/gallery/1.jpg', keywords: ['funny', 'cat'] }]
-var gMeme = {
-	selectedImgId: 1,
-	selectedLineIdx: 0,
-	lines: [
-		{
-			txt: 'I sometimes eat Falafel',
-			size: 20,
-			align: 'left',
-			color: 'red'
-		}
-	]
+
+let gElImg
+let gKeywordSearchCountMap = { 'funny': 12, 'cat': 16, 'baby': 2 }
+
+const gMeme = {
+    selectedImgId: 1,
+    selectedLineIdx: 0,
+    lines: [
+        {
+            txt: 'Enter your line',
+            fontSize: 30,
+            align: 'top',
+            color: 'black'
+        },
+        {
+            txt: 'Enter your line',
+            fontSize: 30,
+            align: 'bottom',
+            color: 'black'
+        }
+    ]
 }
 
 function getMeme() {

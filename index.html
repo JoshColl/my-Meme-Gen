@@ -12,10 +12,11 @@
 <body onload="onInit()">
 
     <header class="main-header">
-        <section class="flex align-center">
+        <section class=" main-header-container flex space-between align-center">
             <div class="logo">Logo</div>
+            <!-- <img src="img/LOGO.png" class="logo" alt="MemeGen" /> -->
             <nav class="main-nav">
-                <ul class="clean-list flex align-center">
+                <ul class="clean-list flex space-between">
                     <li><a href="#" onclick="onOpenGallery()">Gallery</a></li>
                     <li><a href="#">Memes</a></li>
                     <li><a href="#">About</a></li>
@@ -32,17 +33,17 @@
 
         <section class="meme-editor" hidden>
             <div class="canvas-container">
-                <canvas id="meme-canvas" width="400" height="400"></canvas>
+                <canvas id="meme-canvas" width="350" height="350"></canvas>
             </div>
 
-            <form class="meme-settings">
-                <button class="switch-line-btn" onclick="onSwitchLine()">← →</button>
-                <button class="small-font-btn" onclick="onDecreaseFontSize()">A-</button>
-                <button class="big-font-btn" onclick="onIncreaseFontSize()">A+</button>
-                <input class="txt-input" oninput="onSetLineTxt(this.value)" type="text" placeholder="Enter text">
-                <input class="clr-input" onchange="onSetTextColor(this.value)" type="color">
+            <form class="meme-settings grid">
                 <button class="add-line" onclick="onAddLine()">Add</button>
                 <button class="save-btn" onclick="onSaveMeme()">Save</button>
+                <button class="small-font-btn" onclick="onDecreaseFontSize()">A-</button>
+                <button class="big-font-btn" onclick="onIncreaseFontSize()">A+</button>
+                <input class="clr-input" onchange="onSetTextColor(this.value)" type="color">
+                <button class="switch-line-btn" onclick="onSwitchLine()">←→</button>
+                <input class="txt-input" oninput="onSetLineTxt(this.value)" type="text" placeholder="Enter text">
             </form>
         </section>
     </main>

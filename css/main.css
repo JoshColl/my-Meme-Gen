@@ -7,9 +7,19 @@ body {
     margin: 0;
 }
 
-.main-header {
+.main-header-container {
     background-color: #4a595a;
-    padding: 20px;
+    height: 15vh;
+    border-radius: 10px;
+    position: sticky;
+}
+
+.logo {
+    margin-left: 20px;
+}
+
+.main-nav {
+    margin-right: 20px;
 }
 
 footer {
@@ -18,24 +28,26 @@ footer {
 }
 
 .images-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     gap: 10px;
+    margin: 30px 20px 20px;
 }
 
 img {
-    height: 200px;
-    /* min-height: 200px; */
-    /* border: 1px solid black; */
+    width: 100%;
+    border-radius: 10px;
     background-position: center center;
     background-size: cover;
-    border-radius: 10px;
+}
+
+img:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 .grid {
     display: grid;
 }
-
-
 
 .flex {
     display: flex;
@@ -68,7 +80,11 @@ img {
 }
 
 canvas {
-    margin: 0 auto;
-    box-shadow: -6px -4px 11px #4d5a4a;
-    border: 2px solid #010101;
+    margin: 5px;
+    border: 5px solid #4d5a4a;
+}
+
+.meme-settings {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
 }
