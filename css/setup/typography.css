@@ -1,0 +1,9 @@
+@font-face {
+    font-family: cabin-medium;
+    src: url(../../fonts/cabin/Cabin-Medium-TTF.ttf);
+}
+
+@font-face {
+    font-family: cabin-regular;
+    src: url(../../fonts/cabin/Cabin-Regular-TTF.ttf);
+}

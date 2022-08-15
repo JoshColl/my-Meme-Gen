@@ -1,0 +1,15 @@
+.main-layout {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+body>section {
+    flex-grow: 1;
+}
+
+@media (min-width: 800px) {
+    .main-layout {
+        margin-right: 25px;
+        margin-left: 25px;
+    }
+}

@@ -1,0 +1,152 @@
+.control-box-container {
+    background-color: var(--clr4);
+}
+
+.control-box {
+    margin: 0px 10px 50px;
+}
+
+.control-box .control-box-header {
+    font-family: cabin-medium, sans-serif;
+    font-size: 1.5rem;
+    color: var(--clr6);
+    line-height: 1.166666666666667;
+    margin-top: 15px;
+}
+
+.control-box .line-btns {
+    align-items: center;
+}
+
+.control-box .control-btn {
+    border: none;
+    background-color: inherit;
+}
+
+.control-box .text-editor-btns {
+    background-color: var(--clr2);
+    border: 1px solid var(--clr6);
+    border-bottom: none;
+    border-radius: 10px 10px 0 0;
+}
+
+.control-box .control-box-header .control-btn:not(.remove-line-btn) {
+    font-size: 1.35rem;
+}
+
+.control-btn {
+    width: 45px;
+    margin: 6px;
+}
+
+.control-box .add-line-btn {
+    width: 40px;
+    margin: 6px;
+}
+
+.control-box .text-editor .control-btn {
+    width: 45px;
+    margin: 6px;
+}
+
+.control-box .control-btn:hover {
+    opacity: .7;
+}
+
+.control-box .text-editor-btns>* {
+    margin: 4px;
+}
+
+.control-box input[name="fill-color-Picker"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.control-box input[name="border-color-Picker"] {
+    opacity: 0;
+    position: absolute;
+}
+
+.control-box .color-picker-container img:not(.btn) {
+    display: none;
+}
+
+.control-box .color-picker-btn {
+    width: 33px;
+}
+
+.control-box .color-picker-btn:hover {
+    opacity: .7;
+}
+
+.control-box input[name="text-line-input"] {
+    border: none;
+    color: var(--clr8);
+    font-size: 1.2rem;
+    line-height: 1.125;
+    padding: 25px;
+    width: 100%;
+    border-radius: 0 0 10px 10px;
+    background-color: var(--clr2);
+    border: 1px solid var(--clr6);
+}
+
+.control-box input[name="text-line-input"]:focus-visible {
+    outline: none;
+}
+
+.control-box .btns-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.control-box .bottom-btn {
+    display: inline;
+    background-color: var(--clr1);
+    font-size: 1.125rem;
+    text-decoration: none;
+    color: var(--clr2);
+    font-family: cabin-medium, sans-serif;
+    padding: 0.9375em 1.875em;
+    border-radius: 2em;
+    margin: 10px 30px 0px 10px;
+    text-align: center;
+    max-width: 11.25em;
+    border: none;
+}
+
+@media (min-width: 500px) {
+
+    .control-box .round-btn {
+        margin-bottom: 30px;
+    }
+
+    .control-box .btns-container>*:not(:last-child) {
+        margin-inline-end: 10px;
+    }
+
+    .control-box .btns-container {
+        justify-content: flex-end;
+        margin-inline-start: auto;
+    }
+}
+
+@media (min-width: 800px) {
+    .control-box-container {
+        width: 40%;
+    }
+
+    .control-box .control-box-header {
+        margin-top: 15px;
+    }
+
+    .control-box {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+
+    .control-box .text-editor {
+        flex-grow: 1;
+    }
+}

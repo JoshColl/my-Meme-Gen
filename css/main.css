@@ -1,90 +1,11 @@
-* {
-    box-sizing: border-box;
-}
+@import "setup/vars.css";
+@import "setup/typography.css";
 
-body {
-    height: 100vh;
-    margin: 0;
-}
+@import "basic/base.css";
+@import "basic/Layout.css";
+@import "basic/helpers.css";
 
-.main-header-container {
-    background-color: #4a595a;
-    height: 15vh;
-    border-radius: 10px;
-    position: sticky;
-}
-
-.logo {
-    margin-left: 20px;
-}
-
-.main-nav {
-    margin-right: 20px;
-}
-
-footer {
-    background-color: #4a595a;
-    padding: 20px;
-}
-
-.images-container {
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
-    gap: 10px;
-    margin: 30px 20px 20px;
-}
-
-img {
-    width: 100%;
-    border-radius: 10px;
-    background-position: center center;
-    background-size: cover;
-}
-
-img:hover {
-    opacity: 0.7;
-    cursor: pointer;
-}
-
-.grid {
-    display: grid;
-}
-
-.flex {
-    display: flex;
-}
-
-.flex-1 {
-    flex: 1;
-}
-
-.justify-center {
-    justify-content: center;
-}
-
-.align-center {
-    align-items: center;
-}
-
-.space-between {
-    justify-content: space-between;
-}
-
-.space-around {
-    justify-content: space-around;
-}
-
-.clean-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-canvas {
-    margin: 5px;
-    border: 5px solid #4d5a4a;
-}
-
-.meme-settings {
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-    gap: 10px;
-}
+@import "components/header.css";
+@import "components/gallery.css";
+@import "components/meme-container.css";
+@import "components/control-box.css";

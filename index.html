@@ -9,51 +9,93 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 
-<body onload="onInit()">
-
+<body class="flex" onload="onInit()">
     <header class="main-header">
-        <section class=" main-header-container flex space-between align-center">
-            <div class="logo">Logo</div>
-            <!-- <img src="img/LOGO.png" class="logo" alt="MemeGen" /> -->
+        <div class="header-content main-layout flex space-between">
+            <img src="icons/logo.png" class="logo" alt="MemeGen" />
             <nav class="main-nav">
-                <ul class="clean-list flex space-between">
-                    <li><a href="#" onclick="onOpenGallery()">Gallery</a></li>
-                    <li><a href="#">Memes</a></li>
-                    <li><a href="#">About</a></li>
+                <ul class="main-nav-list clean-list flex">
+                    <li><button class="btn nav-btn" onclick="onOpenGallery()">Gallery</button></li>
+                    <li><button class="btn nav-btn" onclick="onOpenSavedMemes()">Memes</button></li>
+                    <li><button class="btn nav-btn">About</button></li>
                 </ul>
+                <button class="btn close-btn" onclick="closeMenu()">x</button>
             </nav>
-        </section>
+            <button class="btn toggle-menu-btn" onclick="openMenu()">☰</button>
+        </div>
     </header>
-
-    <main>
-        <section class="gallery">
-            <div class="gallery-img images-container grid">
-            </div>
-        </section>
-
-        <section class="meme-editor" hidden>
+    <section class="gallery" hidden>
+        <main class="images-container main-layout grid"></main>
+    </section>
+    <section class="meme-editor main-layout flex" hidden>
+        <div class="meme-container">
+            <button class="btn small-btn" onclick="onCloseMemeEditor()">Gallery</button>
             <div class="canvas-container">
-                <canvas id="meme-canvas" width="350" height="350"></canvas>
+                <canvas width="400" height="400" class="meme-canvas"></canvas>
             </div>
-
-            <form class="meme-settings grid">
-                <button class="add-line" onclick="onAddLine()">Add</button>
-                <button class="save-btn" onclick="onSaveMeme()">Save</button>
-                <button class="small-font-btn" onclick="onDecreaseFontSize()">A-</button>
-                <button class="big-font-btn" onclick="onIncreaseFontSize()">A+</button>
-                <input class="clr-input" onchange="onSetTextColor(this.value)" type="color">
-                <button class="switch-line-btn" onclick="onSwitchLine()">←→</button>
-                <input class="txt-input" oninput="onSetLineTxt(this.value)" type="text" placeholder="Enter text">
-            </form>
-        </section>
-    </main>
-
-    <footer>footer</footer>
-
-    <script src="js/meme.service.js"></script>
-    <script src="js/gallery.service.js"></script>
-    <script src="js/meme.controller.js"></script>
+        </div>
+        <div class="control-box-container">
+            <div class="control-box">
+                <header class="control-box-header">
+                    <h3 class="control-box-header">Creat your Memes</h3>
+                </header>
+                <div class="text-editor">
+                    <div class="text-editor-btns">
+                        <button class="btn control-btn" onclick="onDecreaseFontSize()">
+                            <img src="icons/decrease font-icon.png" alt="decrease font size" />
+                        </button>
+                        <button class="btn control-btn" onclick="onIncreaseFontSize()">
+                            <img src="icons/increase font-icon.png" alt="increase font size" />
+                        </button>
+                        <label class="color-picker-container">
+                            <input type="color" name="fill-color-Picker" oninput="onSetTextFillColor(this.value)" />
+                            <img class="btn color-picker-btn" src="icons/bucket-icon-png-18.jpg"
+                                alt="choose fill color" />
+                        </label>
+                        <label class="color-picker-container">
+                            <input type="color" name="border-color-Picker" oninput="onSetBorderColor(this.value)" />
+                            <img class="btn color-picker-btn" src="icons/paint-board-and-brush.png"
+                                alt="choose border color" />
+                        </label>
+                        <button class="btn control-btn">
+                            <img src="icons/align-to-left.png" alt="align to left" onclick="onAlignLeft()" />
+                        </button>
+                        <button class="btn control-btn">
+                            <img src="icons/center-text-alignment.png" alt="center text" onclick="onCenterText()" />
+                        </button>
+                        <button class="btn control-btn">
+                            <img src="icons/align-to-right.png" alt="align to right" onclick="onAlignRight()" />
+                        </button>
+                        <button class="btn control-btn" onclick="onLineUp()">
+                            <img src="icons/up.png" alt="move line up" />
+                        </button>
+                        <button class="btn control-btn" onclick="onLineDown()">
+                            <img src="icons/down.png" alt="move line down" />
+                        </button>
+                        <button class="btn control-btn" onclick="onSwitchLine()">
+                            <img src="icons/switch-line.png" alt="add line" />
+                        </button>
+                        <button class="btn control-btn add-line-btn" onclick="onAddLine()">
+                            <img src="icons/add.png" alt="add line" />
+                        </button>
+                        <button class="btn control-btn remove-line-btn" onclick="onRemoveLine()">
+                            <img src="icons/trash.png" alt="delet line" />
+                        </button>
+                    </div>
+                    <input type="text" name="text-line-input" oninput="onSetLineText(this.value)" />
+                </div>
+                <div class="btns-container">
+                    <a href="#" class="btn bottom-btn download-link" download="" onclick="onDownloadMeme()">Download</a>
+                    <button class="btn bottom-btn" onclick="onSaveMeme()">Save</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/service/util.service.js"></script>
+    <script src="js/service/gallery.service.js"></script>
+    <script src="js/service/meme.service.js"></script>
     <script src="js/gallery.controller.js"></script>
+    <script src="js/meme.controller.js"></script>
 </body>
 
 </html>

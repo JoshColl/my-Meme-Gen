@@ -1,0 +1,100 @@
+.meme-container {
+    font-size: 0.875rem;
+}
+
+.meme-container .canvas-container {
+    justify-self: center;
+    align-self: center;
+    width: 250px;
+    height: 250px;
+}
+
+.meme-container canvas {
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .meme-editor {
+        background-color: var(--clr4);
+        flex-direction: column;
+        flex-grow: 1;
+    }
+
+    .meme-container {
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .meme-container .small-btn {
+        display: none;
+    }
+}
+
+@media (min-width: 450px) {
+    .meme-container .canvas-container {
+        width: 380px;
+        height: 380px;
+    }
+}
+
+@media (min-width: 800px) {
+    .meme-container .canvas-container {
+        width: 420px;
+        height: 420px;
+    }
+
+    .meme-editor {
+        background-color: var(--clr2);
+    }
+
+    .meme-container {
+        display: grid;
+        width: 60%;
+        background-color: var(--clr2);
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr 10%;
+    }
+
+    .meme-container .small-btn {
+        display: inline;
+        font-size: inherit;
+        line-height: 1.142857142857143;
+        background-color: inherit;
+        border: none;
+        font-family: inherit;
+        padding-top: 25px;
+        padding-left: 1.571428571428571em;
+        position: relative;
+        transition: color .2s;
+        margin-inline-end: auto;
+        color: inherit;
+    }
+
+    .meme-container .small-btn::before {
+        content: "<";
+        position: absolute;
+        left: 0px;
+        font-size: inherit;
+    }
+
+    .meme-container .small-btn:hover {
+        color: var(--clr1);
+    }
+}
+
+@media (min-width: 1000px) {
+    .meme-container .canvas-container {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .meme-container .canvas-container {
+        width: 600px;
+        height: 600px;
+    }
+}
